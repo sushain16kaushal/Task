@@ -276,11 +276,25 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
 
   return (
 
-    <div className="flex h-screen bg-[#E2E6F2] font-sans antialiased p-6">
+   <div className="flex flex-col lg:flex-row min-h-screen bg-[#E2E6F2] font-sans antialiased p-2 sm:p-4 lg:p-6">
 
       {/* SIDEBAR */}
 
-      <aside className="w-64 bg-[#0F111A] text-gray-400 rounded-3xl flex flex-col justify-between p-5 shadow-xl">
+    <aside className="
+w-full
+lg:w-64
+bg-[#0F111A]
+text-gray-400
+rounded-3xl
+flex
+lg:flex-col
+justify-between
+p-4
+shadow-xl
+mb-4
+lg:mb-0
+overflow-x-auto
+">
 
         <div>
 
@@ -298,7 +312,7 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
 
 
 
-          <nav className="space-y-1">
+          <nav className="flex lg:block gap-2 lg:space-y-1">
 
             {sidebarItems.map((item) => {
 
@@ -314,7 +328,15 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
 
                   onClick={() => setActiveTab(item.name)}
 
-                  className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+                  className={`shrink-0
+lg:w-full
+flex
+items-center
+justify-between
+px-4
+py-3
+rounded-xl
+text-sm ${
 
                     isActive
 
@@ -364,13 +386,20 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
 
       {/* MAIN CONTENT AREA */}
 
-      <main className="flex-1 flex flex-col px-8 py-2 overflow-y-auto">
+      <main className="flex-1 flex flex-col px-2 sm:px-4 lg:px-8 py-2 overflow-y-auto">
 
-        <header className="flex justify-between items-center mb-6">
+        <header className="flex
+flex-col
+sm:flex-row
+justify-between
+items-start
+sm:items-center
+gap-4
+mb-6">
 
           <h1 className="text-2xl font-bold text-gray-900">Products</h1>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4">
 
             <button className="relative p-2 bg-white rounded-full text-gray-600 hover:bg-gray-50 border border-gray-100 shadow-sm">
 
@@ -404,9 +433,18 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
 
         {/* Filters & Action Bar */}
 
-        <section className="flex justify-between items-center mb-5 gap-4">
+        <section className="
+flex
+flex-col
+md:flex-row
+justify-between
+items-stretch
+md:items-center
+mb-5
+gap-4
+">
 
-          <div className="relative w-80">
+          <div className="relative w-full md:w-80">
 
             <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
 
@@ -438,7 +476,15 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
 
               onChange={(e) => setSelectedCategory(e.target.value)}
 
-              className="px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+              className="w-full
+md:w-auto
+px-4
+py-2.5
+bg-white
+border
+border-gray-200
+rounded-xl
+text-sm"
 
             >
 
@@ -482,9 +528,9 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
 
 
 
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto w-full">
 
-            <table className="w-full text-left border-collapse">
+            <table className="min-w-225 w-full text-left border-collapse">
 
               <thead>
 
@@ -586,7 +632,19 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
 
          {/* TOTAL PAGES WALA LOOK (STILL USING CURSOR BACKGROUND) */}
 
-<footer className="border-t border-gray-100 px-6 py-4 flex items-center justify-between bg-white text-xs text-gray-500 rounded-b-3xl">
+<footer className="border-t
+border-gray-100
+px-4
+py-4
+flex
+flex-col
+sm:flex-row
+items-center
+justify-between
+gap-3
+bg-white
+text-xs
+text-gray-500">
 
  {/* FOOTER TEXT */}
 
@@ -598,7 +656,7 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
 
  
 
-  <div className="flex items-center gap-1.5">
+  <div className="flex flex-wrap items-center justify-center gap-1.5">
 
     {/* PREV BUTTON */}
 
@@ -742,7 +800,16 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
     {/* FORM MODAL (HANDLES BOTH ADD & EDIT DYNAMICALLY) */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-[#0F111A]/60 backdrop-blur-sm flex items-center justify-center z-50 transition-opacity duration-300">
-          <div className="bg-white rounded-3xl p-6 w-full max-w-md shadow-2xl border border-gray-100 flex flex-col gap-4">
+          <div className="bg-white
+rounded-3xl
+p-4
+sm:p-6
+w-[95%]
+max-w-md
+mx-4
+shadow-2xl
+border
+border-gray-100">
             <div className="flex justify-between items-center border-b border-gray-100 pb-3">
               <h3 className="text-lg font-bold text-gray-900">{isEditMode ? 'Modify Product Details' : 'Create New Product'}</h3>
               <button onClick={() => setIsModalOpen(false)} className="p-1 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg"><X size={20} /></button>
@@ -760,7 +827,7 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Category</label>
                   <select 
