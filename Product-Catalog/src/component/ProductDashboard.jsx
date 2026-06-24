@@ -83,7 +83,7 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
 
     try {
 
-      let url = `http://localhost:4000/api/products?limit=10`;
+      let url = `https://product-catalog-kfx3.onrender.com/api/products?limit=10`;
 
      
 
@@ -234,7 +234,7 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
     try {
       if (isEditMode) {
         // Option B Route: Product update call
-        const response = await axios.put(`http://localhost:4000/api/products/${editingProductId}`, formData);
+        const response = await axios.put(`https://product-catalog-kfx3.onrender.com/api/products/${editingProductId}`, formData);
         if (response.data.success) {
           setIsModalOpen(false);
           setFormData({ name: '', category: 'Shirt', price: '' });
@@ -249,7 +249,7 @@ const [totalCount, setTotalCount] = useState(0); // LIVE TOTAL PRODUCTS STATE
           fetchProducts(null, '');
         }
       } else {
-      const response = await axios.post('http://localhost:4000/api/products', formData);
+      const response = await axios.post('https://product-catalog-kfx3.onrender.com/api/products', formData);
       if (response.data.success) {
         // Form close and reset
         setIsModalOpen(false);
