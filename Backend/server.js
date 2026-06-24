@@ -5,12 +5,8 @@ import mongoose from 'mongoose';
 import { configDotenv } from 'dotenv';
 configDotenv();
 const app = express();
-const allowedOrigins = [
-  "http://localhost:5173", 
-  "https://task-eta-snowy-99.vercel.app" // 👈 Aapka exact Vercel site URL
-];
 
-// Temporary testing ke liye directly string allow kar dete hain taaki koi loop ka jhanjhat na rahe
+
 app.use(cors({
   origin: "https://task-eta-snowy-99.vercel.app",
   credentials: true
