@@ -6,7 +6,7 @@ import { configDotenv } from 'dotenv';
 configDotenv();
 const app = express();
 app.use(cors({
-    origin:"https://task-eta-snowy-99.vercel.app/",
+    origin:["https://task-eta-snowy-99.vercel.app","http://localhost:5173"],
     credentials:true
 }));
 mongoose.connect(`mongodb+srv://${process.env.USER}:${process.env.PASS}@clusterproduct.vvfbzyh.mongodb.net/`)
